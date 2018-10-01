@@ -14,32 +14,6 @@
 	<title></title>
 </head>
 	<body class="CorBody" id="Fundo">
-		<header class="SecaoSite QTDSecao" >
-			<div class="EstiloTopoNav" id="BarraDeNavegacao">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6">
-							<img class="Imp3dCapa" src="img/ImpressãoCapa.png" alt="não carregou">
-						</div>
-						<div class="col-md-6">
-							<nav class="navbar EstiloNav pull-right navbar-expand-lg">
-				  				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				    				<div class="navbar-nav">
-				      					<li><a class="nav-link AnchorNav"  id="Topo1" data-nav-section="Home" href="#Topico1">Home</a></li>
-				  						<li><a class="nav-link AnchorNav" id="Topo2" data-nav-section="QuemSomos" href="#Topico2">Empresa</a></li>
-				 			 			<li><a class="nav-link AnchorNav" id="Topo3" data-nav-section="Contato" href="#Topico3">Contato</a></li>
-				 			 			<form class="form-inline my-2 my-lg-0">
-				 			 				<input type="search" id="SearchNav" class="InputNav" name="Procurar">
-				 			 				<button class="BtnNav"><i class="fas fa-search"></i></button>
-										</form>
-				    				</div>
-				  				</div>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
 		<section id="Topico1" class="SecaoSite">
 			<div class="SecEsp QTDSite" data-section="Home">
 				<div class="DiviSubtopicos">Home</div>
@@ -156,9 +130,6 @@
 				</div>
 			</div>
 		</section>
-		<footer class="EstiloFooter" >
-			
-		</footer>
 		<script src="lib/jquery/jquery.min.js"></script>
 		<script src="Javascript/3DBrothers.js"></script>
 	</body>

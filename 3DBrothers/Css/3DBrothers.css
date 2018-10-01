@@ -1,3 +1,10 @@
+/*
+Glossário:
+	Linhas 17-42: Header.php;
+	Linhas 42-201: Header.php;
+	Linhas 202-207: Header.php;
+*/
+
 li {
     text-shadow: 1px 1px rgb(26,28,43);
     color:rgb(26,28,43);
@@ -8,7 +15,7 @@ li {
 input{
 	outline: none;
 }
-/*---Header---*/
+/*---Header.php---*/
 @media(max-width: 1000px){
 	.Imp3dCapa{
 		display: none;
@@ -33,7 +40,7 @@ p{
 	font-size: 19.5px;
 	color:rgb(26,28,43);
 }
-/*-----Home------*/
+/*-----3DBrothers.php------*/
 .DiviSubtopicos{
 	padding: 15px;
 	font-size: 35px;
@@ -197,4 +204,12 @@ p{
 	background-color:rgb(26,28,43);
 	height:200px;
 	width: 100%;
+	margin-top: 10%;
+}
+/*Essa parte é do CampoVazio.php*/
+.TextoPagRedirect{
+	text-align:center;
+	margin-top:12%;
+	font-size: 30px;
+	color:rgb(26,28,43);
 }

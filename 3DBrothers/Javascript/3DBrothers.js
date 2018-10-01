@@ -47,3 +47,4 @@ function BarraFixa(){
 	}
 }
 window.onscroll=function(){BarraFixa()};
+//Essa Parte é da página ModalCampoVazio.php

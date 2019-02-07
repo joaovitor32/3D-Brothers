@@ -6,7 +6,7 @@
 	$Telefone=$_POST['Telefone'];
 	$Mensagem=$_POST['Mensagem'];
 
-	$SQLUpdate="INSERT INTO Ocorrencia (Nome,Email,Telefone,Mensagem) VALUEs (".$Nome.",".$Email.",".$Telefone.",".$Mensagem.")";
+	$SQLUpdate="INSERT INTO Ocorrencia (Nome,Email,Telefone,Mensagem) VALUES (".$Nome.",".$Email.",".$Telefone.",".$Mensagem.")";
 	if($Conexao->query($SQLUpdate)==true){
 		echo "O insert foi feito com sucesso";
 	}else{

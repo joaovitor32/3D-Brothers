@@ -114,7 +114,7 @@
 					</div>
 					<div class="col-md-6">
 						<div class="Caixa2">
-							<form action="php/Contato.php" method="post">
+							<form action="Php/Contato.php" method="post">
 								<label for="contato_nome" class="ContatoLabel" >Nome:</label><br>
 								<input class="InputContato" type="text" name="Nome" placeholder="Digite seu nome aqui:"><br>
 								<label class="ContatoLabel">Email:</label><br>

@@ -1,34 +1,27 @@
 <?php
-	$EmailEnviar="joaovitormunizlopes@gmail.com";
-
-	$Nome=$_POST['Nome'];
+	require_once __DIR__.'/Conexao.php';	
+	
+	$Nome = $_POST['Nome'];
 	$Email=$_POST['Email'];
 	$Telefone=$_POST['Telefone'];
 	$Mensagem=$_POST['Mensagem'];
-	
-	//Criar funções para verificar o formulário, essa Parte vai verificar se os dados estão corretos
-	$VerificaCampos = empty($Nome||$Email||$Telefone||$Mensagem);
-	if($VerificaCampos){
-		header("Location: http://localhost/3DBrothers/CampoVazio.php");
-	}
-	//Script PHP para mandar dados do formulário via email
-	$Mensagem3DB ='<p> Mensagem recebida através do site</p>
-					<h3>Nome:'.$Nome.'<h3>
-					<h3 E-Mail:'.$Email.'<h3
-					<h3>Telefone:'.$Telefone.'<h3>
-					<p>Mensagem:'.$Mensagem.'<h3>';
 
-	
-	$headers='MIME-Version: 1.1'."\r\n";
-	$headers .='Content-type:text/html; charset=iso-8859-1'."\r\n";
-	$headers .= 'From:$nome<$email>';
-
-	$EnviarEmail=mail($EmailEnviar,'Contato site 3DBrothers',$Mensagem3DB,$headers);
-	if($EnviarEmail){
-		echo "Email Enviado com sucesso";
+	$SQLUpdate="INSERT INTO Ocorrencia (Nome,Email,Telefone,Mensagem) VALUEs (".$Nome.",".$Email.",".$Telefone.",".$Mensagem.")";
+	if($Conexao->query($SQLUpdate)==true){
+		echo "O insert foi feito com sucesso";
 	}else{
-		echo "Operação falhou";
+		echo "O insert nao foi feito com sucesso"; 
 	}
-
-
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Page Title</title>
+	
+</head>
+	<body>
+		<a href="Display.php">Display de dados</a>
+	</body>
+</html>

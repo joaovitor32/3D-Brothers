@@ -1,7 +1,7 @@
 <?php
-    $host = "localhost";
+    $host = "127.0.0.1";
     $username = "root";
     $password = "";
-    $dbname = "Mensagem";
-    $Conexao = new mysqli($host, $username, $password, $dbname);    
+    $dbname = "Mensagem1";
+    $Conexao =mysqli_connect($host, $username, $password, $dbname);    
 ?>

@@ -19,20 +19,27 @@
 </head>
 	<body class="CorBody" id="Fundo">
 		<?php
-			include_once 'Conexao.php';	
+			include("./3DBrothers/Header.php");
+		?>
+		<?php
+			include ('Conexao.php');
 
 			$SQL="SELECT * FROM Ocorrencia";
-			$Consulta=mysqli_query($Conexao,$SQL);
-			$Linhas=array();
+			$Consulta=mysqli_query($Conexao,$SQL) or die(mysqli_error($Conexao));
+            mysqli_set_charset($Conexao,'utf8');
+			$Linhas= array();
 			while($Linha= mysqli_fetch_array($Consulta)){
 				$Linhas[] = $Linha; 
-				foreach($Linhas AS $Dado){
+				foreach($Linhas AS $Dados){
 					echo $Dados['Nome'];
+					echo $Dados['Email'];
+					echo $Dados['Telefone'];
+					echo $Dados['Mensagem'];
 				}
 			}
-
 			mysqli_close($Conexao);
 		?>
+
 		<script src="lib/jquery/jquery.min.js"></script>
 		<script src="Javascript/3DBrothers.js"></script>
 	</body>

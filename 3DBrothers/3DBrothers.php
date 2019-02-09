@@ -118,11 +118,11 @@
 								<label for="contato_nome" class="ContatoLabel" >Nome:</label><br>
 								<input class="InputContato" type="text" name="Nome" placeholder="Digite seu nome aqui:"><br>
 								<label class="ContatoLabel">Email:</label><br>
-								<input class="InputContato" type="email" name="Email" placeholder="Digite aqui seu email:"><br>
+								<input class="InputContato" type="text" name="Email" placeholder="Digite aqui seu email:"><br>
 								<label class="ContatoLabel">Telefone:</label><br>
-								<input class="InputContato" type="text" name="Telefone" placeholder="Telefone:"><br>
+								<input class="InputContato" type="number" name="Telefone" placeholder="Telefone:"><br>
 								<label class="ContatoLabel">Mensagem:</label><br>
-								<textarea class="TextareaContato" name="Mensagem"></textarea><br>
+								<textarea class="TextareaContato"  name="Mensagem"></textarea><br>
 								<button class="btn BotaoContato">Enviar</button>
 							</form>
 						</div>

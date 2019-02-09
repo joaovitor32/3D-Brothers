@@ -18,7 +18,21 @@
     <title></title>
 </head>
 	<body class="CorBody" id="Fundo">
+		<?php
+			include_once 'Conexao.php';	
 
+			$SQL="SELECT * FROM Ocorrencia";
+			$Consulta=mysqli_query($Conexao,$SQL);
+			$Linhas=array();
+			while($Linha= mysqli_fetch_array($Consulta)){
+				$Linhas[] = $Linha; 
+				foreach($Linhas AS $Dado){
+					echo $Dados['Nome'];
+				}
+			}
+
+			mysqli_close($Conexao);
+		?>
 		<script src="lib/jquery/jquery.min.js"></script>
 		<script src="Javascript/3DBrothers.js"></script>
 	</body>

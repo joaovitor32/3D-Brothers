@@ -10,7 +10,7 @@
 	mysqli_query($Conexao, $SQLInsert);
 	mysqli_close($Conexao);
 
-	$Redirecionar="/3D-Brothers/3DBrothers/";
-	header("location:$Redirecionar");
+	//$Redirecionar="/3D-Brothers/3DBrothers/";
+	//header("location:$Redirecionar");
 ?>
 

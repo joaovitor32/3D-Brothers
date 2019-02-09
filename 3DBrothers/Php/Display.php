@@ -19,7 +19,7 @@
 </head>
 	<?php
 		include ('Conexao.php');
-		include ('Operacoes.php');
+		include ('Consulta.php');
 	?>
 	<body class="CorBody" id="Fundo">
 		<div class="container">
@@ -40,22 +40,21 @@
 								<?php 
 									while($Linha= mysqli_fetch_array($Consulta)){
 										$Linhas[] = $Linha; 
-										foreach($Linhas AS $Dados){
-											$CodOcorrencia = $Linha['CodOcorrencia'];
-											$Nome=$Linha['Nome'];
-											$Email = $Linha['Email'];
-											$Telefone = $Linha['Telefone'];
-											$Mensagem=$Linha['Mensagem'];
-											echo '<tr class="odd gradeX">';
-											echo '<td>'.$CodOcorrencia.'</td>';
-											echo '<td>'.$Nome.'</td>';
-											echo '<td>'.$Email.'</td>';
-											echo '<td >'.$Telefone.'</td>';
-											echo '<td>'.$Mensagem.'</td>';
-											echo '<td><form method="post" action="Operacoes.php"><input type="submit" name="'.$CodOcorrencia.'"></form></td>';
-											echo '</tr>';
-										}
+										$CodOcorrencia = $Linha['CodOcorrencia'];
+										$Nome=$Linha['Nome'];
+										$Email = $Linha['Email'];
+										$Telefone = $Linha['Telefone'];
+										$Mensagem=$Linha['Mensagem'];
+										echo '<tr>';
+										echo '<td>'.$CodOcorrencia.'</td>';
+										echo '<td>'.$Nome.'</td>';
+										echo '<td>'.$Email.'</td>';
+										echo '<td >'.$Telefone.'</td>';
+										echo '<td>'.$Mensagem.'</td>';
+										echo '<td><form method="post" action="Operacoes.php"><input type="submit" name="'.$CodOcorrencia.'"></form></td>';
+										echo '</tr>';
 									}
+									//include ('Excluir.php');
 								?>
     						</tr>
   						</tbody>
@@ -67,3 +66,5 @@
 		<script src="Javascript/3DBrothers.js"></script>
 	</body>
 </html>
+
+

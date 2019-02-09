@@ -41,10 +41,21 @@
 									while($Linha= mysqli_fetch_array($Consulta)){
 										$Linhas[] = $Linha; 
 										foreach($Linhas AS $Dados){
-										echo "<tr><td>".$Dados['CodOcorrencia']."</td><td>".$Dados['Nome']."</td><td>".$Dados['Email']."</td><td>".$Dados['Telefone']."</td><td>".$Dados['Mensagem']."</td><td><form method=\"post\" action=\"Operacoes.php\"><input type=\"submit\" value=\"Codigo\" name=\"Codigo\"></form></td></tr>";
+											$CodOcorrencia = $Linha['CodOcorrencia'];
+											$Nome=$Linha['Nome'];
+											$Email = $Linha['Email'];
+											$Telefone = $Linha['Telefone'];
+											$Mensagem=$Linha['Mensagem'];
+											echo '<tr class="odd gradeX">';
+											echo '<td>'.$CodOcorrencia.'</td>';
+											echo '<td>'.$Nome.'</td>';
+											echo '<td>'.$Email.'</td>';
+											echo '<td >'.$Telefone.'</td>';
+											echo '<td>'.$Mensagem.'</td>';
+											echo '<td><form method="post" action="Operacoes.php"><input type="submit" name="'.$CodOcorrencia.'"></form></td>';
+											echo '</tr>';
 										}
 									}
-									mysqli_close($Conexao);
 								?>
     						</tr>
   						</tbody>

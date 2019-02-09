@@ -19,10 +19,7 @@
 </head>
 	<?php
 		include ('Conexao.php');
-		$SQL="SELECT * FROM Ocorrencia";
-		$Consulta=mysqli_query($Conexao,$SQL) or die(mysqli_error($Conexao));
-		mysqli_set_charset($Conexao,'utf8');
-		$Linhas= array();
+		include ('Operacoes.php');
 	?>
 	<body class="CorBody" id="Fundo">
 		<div class="container">
@@ -41,11 +38,10 @@
   						<tbody>
     						<tr>
 								<?php 
-								
 									while($Linha= mysqli_fetch_array($Consulta)){
 										$Linhas[] = $Linha; 
 										foreach($Linhas AS $Dados){
-										echo "<tr><td>".$Dados['CodOcorrencia']."</td><td>".$Dados['Nome']."</td><td>".$Dados['Email']."</td><td>".$Dados['Telefone']."</td><td>".$Dados['Mensagem']."</td></tr>";
+										echo "<tr><td>".$Dados['CodOcorrencia']."</td><td>".$Dados['Nome']."</td><td>".$Dados['Email']."</td><td>".$Dados['Telefone']."</td><td>".$Dados['Mensagem']."</td><td><form method=\"post\" action=\"Operacoes.php\"><input type=\"submit\" value=\"Codigo\" name=\"Codigo\"></form></td></tr>";
 										}
 									}
 									mysqli_close($Conexao);

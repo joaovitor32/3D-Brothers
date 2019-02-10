@@ -38,8 +38,7 @@
   						<tbody>
     						<tr>
 								<?php 
-									while($Linha= mysqli_fetch_array($Consulta)){
-										$Linhas[] = $Linha; 
+									while($Linha= mysqli_fetch_assoc($Consulta)){
 										$CodOcorrencia = $Linha['CodOcorrencia'];
 										$Nome=$Linha['Nome'];
 										$Email = $Linha['Email'];
@@ -51,9 +50,10 @@
 										echo '<td>'.$Email.'</td>';
 										echo '<td >'.$Telefone.'</td>';
 										echo '<td>'.$Mensagem.'</td>';
-										echo '<td><form method="post" action="Excluir.php"><input type="submit" name="'.$CodOcorrencia.'"></form></td>';
+										echo '<td><button><a href="Deletar.php?Id='.$CodOcorrencia.'">Apagar</a></button></td>';
 										echo '</tr>';
 									}
+									mysqli_close($BD->ConectarBanco());
 								?>
     						</tr>
   						</tbody>

@@ -6,7 +6,7 @@
         private $password = "";
         private $dbname = "Mensagem1";
     
-        public function ConectaBanco(){
+        public function ConectarBanco(){
             $Conexao=mysqli_connect($this->host,$this->username,$this->password,$this->dbname);
             mysqli_set_charset($Conexao,'utf-8');
             if(mysqli_connect_errno()){

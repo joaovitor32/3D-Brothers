@@ -18,8 +18,8 @@
     <title></title>
 </head>
 	<?php
-		include ('Conexao.php');
-		include ('Consulta.php');
+		require_once __DIR__.'/Conexao.php';
+		require_once __DIR__.'/Consulta.php';
 	?>
 	<body class="CorBody" id="Fundo">
 		<div class="container">
@@ -50,10 +50,9 @@
 										echo '<td>'.$Email.'</td>';
 										echo '<td >'.$Telefone.'</td>';
 										echo '<td>'.$Mensagem.'</td>';
-										echo '<td><button><a href="Deletar.php?Id='.$CodOcorrencia.'">Apagar</a></button></td>';
+										echo "<td><button><a href='/3D-Brothers/3DBrothers/Php/Mensagem/Deletar.php/.php?Id=".$CodOcorrencia."'>Apagar</a></button></td>";
 										echo '</tr>';
 									}
-									mysqli_close($BD->ConectarBanco());
 								?>
     						</tr>
   						</tbody>

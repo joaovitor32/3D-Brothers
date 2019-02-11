@@ -19,13 +19,12 @@
 </head>
 	<?php
 		require_once __DIR__.'/ConexaoFotos.php';
-		require_once __DIR__.'/ConsultaFotos.php';
 	?>
 	<body class="CorBody" id="Fundo">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 offset-3">
-					<form method="post" enctype="multipart/form-data" action="UploadDeFotos.php">
+					<form method="post" enctype="multipart/form-data" action="/3D-Brothers/3DBrothers/Php/Fotos/UploadDeFotos.php">
 						Imagem: <input name="Image" type="file" >
 						<input type="submit" value="Cadastrar">
 					</form>
@@ -46,19 +45,14 @@
   						<tbody>
     						<tr>
 								<?php 
-									while($Linha= mysqli_fetch_assoc($Consulta)){
-										$CodOcorrencia = $Linha['CodOcorrencia'];
-										$Nome=$Linha['Nome'];
-										$Email = $Linha['Email'];
-										$Telefone = $Linha['Telefone'];
-										$Mensagem=$Linha['Mensagem'];
+								 	$BD=new BancoDeDados();
+									$SQLSelect="SELECT * FROM Fotos";
+									$ConsultaFoto1=mysqli_query($BD->ConectarBanco(),$SQLSelect);
+									while($Linha= mysqli_fetch_assoc($ConsultaFoto1)){
+										$CodFoto = $Linha['CodFoto'];
 										echo '<tr>';
-										echo '<td>'.$CodOcorrencia.'</td>';
-										echo '<td>'.$Nome.'</td>';
-										echo '<td>'.$Email.'</td>';
-										echo '<td >'.$Telefone.'</td>';
-										echo '<td>'.$Mensagem.'</td>';
-										echo "<td><button><a href='/3D-Brothers/3DBrothers/Php/Mensagem/Deletar.php/.php?Id=".$CodOcorrencia."'>Apagar</a></button></td>";
+										echo '<td>'.$CodFoto.'</td>';
+										echo "<td><img src='PegaImagem.php?Id=$CodFoto'></td>";
 										echo '</tr>';
 									}
 								?>

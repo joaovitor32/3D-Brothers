@@ -1,10 +1,10 @@
 <?php
     class BancoDeDados{
 
-        private $host = "127.0.0.1";
+        private $host = "localhost";
         private $username = "root";
         private $password = "";
-        private $dbname = "Mensagem2";
+        private $dbname = "Mensagem3";
     
         public function ConectarBanco(){
             $Conexao=mysqli_connect($this->host,$this->username,$this->password,$this->dbname);

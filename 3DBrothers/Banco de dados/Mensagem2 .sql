@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 11/02/2019 às 14:12
+-- Tempo de geração: 11/02/2019 às 18:58
 -- Versão do servidor: 10.1.37-MariaDB
 -- Versão do PHP: 7.3.1
 
@@ -30,9 +30,12 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `Fotos` (
   `CodFoto` bigint(20) NOT NULL,
-  `NomeImagem` varchar(220) NOT NULL
+  `Imagem` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Despejando dados para a tabela `Fotos`
+--
 -- --------------------------------------------------------
 
 --
@@ -48,7 +51,9 @@ CREATE TABLE `Ocorrencia` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Despejando dados para a tabela `Ocorrencia`
 --
+
 -- Índices de tabelas apagadas
 --
 
@@ -72,7 +77,7 @@ ALTER TABLE `Ocorrencia`
 -- AUTO_INCREMENT de tabela `Fotos`
 --
 ALTER TABLE `Fotos`
-  MODIFY `CodFoto` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `CodFoto` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `Ocorrencia`

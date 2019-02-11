@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 07/02/2019 às 00:12
+-- Tempo de geração: 11/02/2019 às 14:12
 -- Versão do servidor: 10.1.37-MariaDB
 -- Versão do PHP: 7.3.1
 
@@ -19,8 +19,19 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `Mensagem`
+-- Banco de dados: `Mensagem2`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `Fotos`
+--
+
+CREATE TABLE `Fotos` (
+  `CodFoto` bigint(20) NOT NULL,
+  `NomeImagem` varchar(220) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -37,8 +48,15 @@ CREATE TABLE `Ocorrencia` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+--
 -- Índices de tabelas apagadas
 --
+
+--
+-- Índices de tabela `Fotos`
+--
+ALTER TABLE `Fotos`
+  ADD PRIMARY KEY (`CodFoto`);
 
 --
 -- Índices de tabela `Ocorrencia`
@@ -51,10 +69,16 @@ ALTER TABLE `Ocorrencia`
 --
 
 --
+-- AUTO_INCREMENT de tabela `Fotos`
+--
+ALTER TABLE `Fotos`
+  MODIFY `CodFoto` bigint(20) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `Ocorrencia`
 --
 ALTER TABLE `Ocorrencia`
-  MODIFY `CodOcorrencia` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `CodOcorrencia` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

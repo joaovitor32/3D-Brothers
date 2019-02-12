@@ -24,8 +24,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 offset-3">
-					<form method="post" enctype="multipart/form-data" action="/3D-Brothers/3DBrothers/Php/Fotos/UploadDeFotos.php">
-						Imagem: <input name="Image" type="file" >
+					<form method="post"  action="UploadDeFotos.php" enctype="multipart/form-data">
+						Imagem: <input name="Imagem1" type="file" >
 						<input type="submit" value="Cadastrar">
 					</form>
 				</div>
@@ -47,12 +47,12 @@
 								<?php 
 								 	$BD=new BancoDeDados();
 									$SQLSelect="SELECT * FROM Fotos";
-									$ConsultaFoto1=mysqli_query($BD->ConectarBanco(),$SQLSelect);
-									while($Linha= mysqli_fetch_assoc($ConsultaFoto1)){
-										$CodFoto = $Linha['CodFoto'];
+									$ConsultaFoto=mysqli_query($BD->ConectarBanco(),$SQLSelect);
+									
+									while($Row= mysqli_fetch_object($ConsultaFoto)){
 										echo '<tr>';
-										echo '<td>'.$CodFoto.'</td>';
-										echo "<td><img src='PegaImagem.php?Id=$CodFoto'></td>";
+										echo '<td>'.$Row->CodFoto.'</td>';
+										echo "<td><img src='PegaImagem.php?Id=$Row->CodFoto'></td>"; 
 										echo '</tr>';
 									}
 								?>

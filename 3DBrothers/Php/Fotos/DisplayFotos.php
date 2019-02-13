@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	
-	<link rel="stylesheet" type="text/css" href="Css/Sistema.css">
+	<link rel="stylesheet" type="text/css" href="Css/SistemaFotos.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -18,13 +18,13 @@
     <title></title>
 </head>
 	<?php
-		require_once __DIR__.'/ConexaoFotos.php';
+		include ('ConexaoFotos.php');
 	?>
 	<body class="CorBody" id="Fundo">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 offset-3">
-					<form method="post"  action="UploadDeFotos.php" enctype="multipart/form-data">
+					<form method="POST"  action="UploadDeFotos.php" enctype="multipart/form-data">
 						Imagem: <input name="Imagem1" type="file" >
 						<input type="submit" value="Cadastrar">
 					</form>
@@ -45,14 +45,13 @@
   						<tbody>
     						<tr>
 								<?php 
-								 	$BD=new BancoDeDados();
 									$SQLSelect="SELECT * FROM Fotos";
 									$ConsultaFoto=mysqli_query($BD->ConectarBanco(),$SQLSelect);
 									
 									while($Row= mysqli_fetch_object($ConsultaFoto)){
 										echo '<tr>';
 										echo '<td>'.$Row->CodFoto.'</td>';
-										echo "<td><img src='PegaImagem.php?Id=$Row->CodFoto'></td>"; 
+										echo "<td><img class='PadraoImagem' src='PegaImagem.php?Id=$Row->CodFoto'></td>"; 
 										echo '</tr>';
 									}
 								?>

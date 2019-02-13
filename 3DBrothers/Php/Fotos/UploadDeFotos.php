@@ -1,6 +1,5 @@
 <?php
     include ('ConexaoFotos.php');
-    $BD=new BancoDeDados();
 
     $Imagem=$_FILES['Imagem1'];
     if($Imagem!=NULL){

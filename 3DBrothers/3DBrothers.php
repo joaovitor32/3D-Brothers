@@ -13,6 +13,9 @@
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWjVXYT1cChZyRYUBxSq__ecZ818Jdm1k&callback=initMap"></script>
 	<title></title>
 </head>
+	<?php
+		include ('ConexaoFotos.php');
+	?>
 	<body class="CorBody" id="Fundo">
 		<section id="Topico1" class="SecaoSite">
 			<div class="SecEsp QTDSite" data-section="Home">
@@ -23,15 +26,18 @@
 							<div class="CarrosselContainer">
 								<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 									<div class="carousel-inner">
-										<div class="carousel-item active">
-									      	<img class="d-block w-100"  src="img/Carro1.jpeg" alt="First slide">
-									    </div>
-									    <div class="carousel-item">
-									      	<img class="d-block w-100"  src="img/Carro2.jpeg" alt="Second slide">
-									    </div>
-									    <div class="carousel-item">
-									      	<img class="d-block w-100"  src="img/Carro3.jpeg" alt="Third slide">
-									    </div>
+											<?php 
+												$SQLSelect="SELECT * FROM Fotos";
+												$ConsultaFoto=mysqli_query($BD->ConectarBanco(),$SQLSelect);
+												while($Row= mysqli_fetch_object($ConsultaFoto)){
+													$Linha[]=$Row->CodFoto;
+												}
+												echo "<div class=\"carousel-item active\"><img class=\"d-block w-100\" src='/3D-Brothers/3DBrothers/Php/Fotos/PegaImagem.php?Id=$Linha[0]'></div>"; 
+												$TamVet=count($Linha);
+												for($i=1;$i<$TamVet;++$i){
+													echo "<div class=\"carousel-item \"><img class=\"d-block w-100\" src='/3D-Brothers/3DBrothers/Php/Fotos/PegaImagem.php?Id=$Linha[$i]'></div>"; 
+												}
+											?>
 									</div>
 									<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
 										<span class="carousel-control PonteiroCarrossel" aria-hidden="true"></span>

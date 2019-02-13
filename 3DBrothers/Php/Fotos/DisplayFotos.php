@@ -52,6 +52,7 @@
 										echo '<tr>';
 										echo '<td>'.$Row->CodFoto.'</td>';
 										echo "<td><img class='PadraoImagem' src='PegaImagem.php?Id=$Row->CodFoto'></td>"; 
+										echo "<td><button><a href='/3D-Brothers/3DBrothers/Php/Fotos/DeletarFoto.php?Id=".$Row->CodFoto."'>Deletar Foto</button></td>";
 										echo '</tr>';
 									}
 								?>

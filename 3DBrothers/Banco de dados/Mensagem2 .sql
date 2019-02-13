@@ -36,8 +36,11 @@ CREATE TABLE `Fotos` (
 --
 -- Despejando dados para a tabela `Fotos`
 --
+<<<<<<< HEAD
 -- --------------------------------------------------------
 
+=======
+>>>>>>> 8f5c599d498b73b8842d1725cd62b8910f41600a
 --
 -- Estrutura para tabela `Ocorrencia`
 --
@@ -53,8 +56,11 @@ CREATE TABLE `Ocorrencia` (
 --
 -- Despejando dados para a tabela `Ocorrencia`
 --
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 8f5c599d498b73b8842d1725cd62b8910f41600a
 --
 -- Índices de tabelas apagadas
 --

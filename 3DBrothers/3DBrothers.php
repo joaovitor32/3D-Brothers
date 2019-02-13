@@ -32,10 +32,10 @@
 												while($Row= mysqli_fetch_object($ConsultaFoto)){
 													$Linha[]=$Row->CodFoto;
 												}
-												echo "<div class=\"carousel-item active\"><img class=\"d-block w-100\" src='/3D-Brothers/3DBrothers/Php/Fotos/PegaImagem.php?Id=$Linha[0]'></div>"; 
+												echo "<div class=\"carousel-item active\"><img class=\"d-block w-100 FotoCarrossel\" src='/3D-Brothers/3DBrothers/Php/Fotos/PegaImagem.php?Id=$Linha[0]'></div>"; 
 												$TamVet=count($Linha);
 												for($i=1;$i<$TamVet;++$i){
-													echo "<div class=\"carousel-item \"><img class=\"d-block w-100\" src='/3D-Brothers/3DBrothers/Php/Fotos/PegaImagem.php?Id=$Linha[$i]'></div>"; 
+													echo "<div class=\"carousel-item \"><img class=\"d-block w-100 FotoCarrossel\" src='/3D-Brothers/3DBrothers/Php/Fotos/PegaImagem.php?Id=$Linha[$i]'></div>"; 
 												}
 											?>
 									</div>

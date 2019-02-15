@@ -4,7 +4,7 @@
         private $host = "localhost";
         private $username = "root";
         private $password = "";
-        private $dbname = "Mensagem3";
+        private $dbname = "Mensagem4";
     
         public function ConectarBanco(){
             $Conexao=mysqli_connect($this->host,$this->username,$this->password,$this->dbname);
@@ -17,10 +17,5 @@
         }
     }    
     $BD=new BancoDeDados();
-    $Id=$_GET['Id'];
-    $SQLSelectImagem="SELECT * FROM Fotos WHERE CodFoto=$Id";
-    $ConsultaFoto=mysqli_query($BD->ConectarBanco(),$SQLSelectImagem);
-    $Row=mysqli_fetch_object($ConsultaFoto);
-    Header( "Content-type: image/gif"); 
-    echo $Row->Imagem;
 ?>
+

@@ -16,7 +16,6 @@
 	<?php
 		include ('ConexaoFotos.php');
 	?>
-	<body class="CorBody" id="Fundo">
 		<section id="Topico1" class="SecaoSite">
 			<div class="SecEsp QTDSite" data-section="Home">
 				<div class="DiviSubtopicos">Home</div>
@@ -27,15 +26,13 @@
 								<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 									<div class="carousel-inner">
 											<?php 
-												$SQLSelect="SELECT * FROM Fotos";
-												$ConsultaFoto=mysqli_query($BD->ConectarBanco(),$SQLSelect);
 												while($Row= mysqli_fetch_object($ConsultaFoto)){
 													$Linha[]=$Row->CodFoto;
 												}
-												echo "<div class=\"carousel-item active\"><img class=\"d-block w-100 FotoCarrossel\" src='/3D-Brothers/3DBrothers/Php/Fotos/PegaImagem.php?Id=$Linha[0]'></div>"; 
+												echo "<div class=\"carousel-item active\"><img class=\"d-block w-100 FotoCarrossel\" src='/3D-Brothers/3DBrothers/Php/Sistema/Fotos/PegaImagem.php?Id=$Linha[0]'></div>"; 
 												$TamVet=count($Linha);
 												for($i=1;$i<$TamVet;++$i){
-													echo "<div class=\"carousel-item \"><img class=\"d-block w-100 FotoCarrossel\" src='/3D-Brothers/3DBrothers/Php/Fotos/PegaImagem.php?Id=$Linha[$i]'></div>"; 
+													echo "<div class=\"carousel-item \"><img class=\"d-block w-100 FotoCarrossel\" src='/3D-Brothers/3DBrothers/Php/Sistema/Fotos/PegaImagem.php?Id=$Linha[$i]'></div>"; 
 												}
 											?>
 									</div>
@@ -57,7 +54,7 @@
 				</div>
 			</div>
 		</section>
-		<section  data-section="QuemSomos" id="Topico2">
+		<section class="SecaoSite"  data-section="QuemSomos" id="Topico2">
 			<div id="PT1" class="TopGeral Inic1">
 				<div class="DiviSubtopicos">Empresa</div>
 				<div class="container">
@@ -120,7 +117,7 @@
 					</div>
 					<div class="col-md-6">
 						<div class="Caixa2">
-							<form action="Php/Mensagem/Contato.php" method="post">
+							<form action="Php/Sistema/Mensagem/Contato.php" method="post">
 								<label for="contato_nome" class="ContatoLabel" >Nome:</label><br>
 								<input class="InputContato" type="text" name="Nome" placeholder="Digite seu nome aqui:"><br>
 								<label class="ContatoLabel">Email:</label><br>
@@ -132,6 +129,15 @@
 								<button class="btn BotaoContato">Enviar</button>
 							</form>
 						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section onmouseover="H1FadeEffect()">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 offset-2">					
+						<h1 id="H1Bottom">3DBrothers: Pioneira na região</h1>
 					</div>
 				</div>
 			</div>

@@ -4,7 +4,7 @@
         private $host = "localhost";
         private $username = "root";
         private $password = "";
-        private $dbname = "Mensagem3";
+        private $dbname = "Mensagem4";
     
         public function ConectarBanco(){
             $Conexao=mysqli_connect($this->host,$this->username,$this->password,$this->dbname);
@@ -17,5 +17,7 @@
         }
     }    
     $BD=new BancoDeDados();
+    $SQLSelect="SELECT * FROM Fotos";
+    $ConsultaFoto=mysqli_query($BD->ConectarBanco(),$SQLSelect);
 ?>
 

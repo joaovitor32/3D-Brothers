@@ -1,8 +1,8 @@
 /*
-                                                 Glossário: 
-                                          Linhas 17-42    : Header.php;
-                                          Linhas 42-201   : Header.php;
-                                          Linhas 202-207  : Header.php;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Glossário: 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             Linhas 17-42    : Header.php;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             Linhas 42-201   : Header.php;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             Linhas 202-207  : Header.php;
 */
 
 li {
@@ -92,7 +92,7 @@ p{
 	position: fixed;
 	top     : 0;
 	width   : 100%;
-	z-index : 10;
+	z-index : 1000;
 }
 .BarraParaCima{
 	margin-top: -200px;
@@ -216,4 +216,12 @@ p{
 .FotoCarrossel{
 	width : 100px;
 	height: 300px;
+}
+#H1Bottom{
+	margin-top   : 5%;
+	margin-left  : 4%;
+	margin-bottom: -6%;
+	font-size    : 50px;
+	opacity      : 0;
+	color        : rgb(26,28,43);
 }

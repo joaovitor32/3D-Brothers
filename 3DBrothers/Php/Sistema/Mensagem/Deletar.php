@@ -6,7 +6,7 @@
     $SQLDelete="DELETE FROM Ocorrencia WHERE CodOcorrencia='$CodOcorrencia'";
     if(mysqli_query($BD->ConectarBanco(),$SQLDelete)){
         mysqli_error($BD->ConectarBanco());
-        header("location:/3D-Brothers/3DBrothers/Php/Mensagem/Display.php/");  
+        header("location:/3D-Brothers/3DBrothers/Php/Sistema/Mensagem/Display.php/");  
     }else{
       echo mysqli_error($Conexao);
     }

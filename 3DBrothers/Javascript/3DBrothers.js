@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
 	//Header
 	$("#SearchNav").on("focus", function(){
 		$(this).addClass("AtivoTagInput");
@@ -16,13 +15,13 @@ $(document).ready(function(){
 	});
 	//Efeito variação do scroll
 	//Armazena as secções que vao mudar e var Topos vai acumular Topo1 Topo2 e Topo3
- 	var alturas={};
-	var i=1;
+ 	var alturas = {};
+ 	var i       = 1;
 	$(".SecaoSite").each(function(){
-		alturas[i]=$(this).offset().top;
+		alturas[i] = $(this).offset().top;
 		i++;
 	});
-	var TotalSecoes=i;
+	var TotalSecoes = i;
 	var Seccao;
 	$(window).on('scroll',function(){
 		for(i=1;i<=TotalSecoes;i++){
@@ -37,14 +36,27 @@ $(document).ready(function(){
 
 });
 //1° Efeito de Barra
-var Navbar = document.getElementById("BarraDeNavegacao");
-var PosBarra = Navbar.offsetTop;
 function BarraFixa(){
+	var Navbar   = document.getElementById("BarraDeNavegacao");
+	var PosBarra = Navbar.offsetTop;
 	if(window.scrollY>PosBarra){
 		Navbar.classList.add("StickyEffect");
 	}else{
 		Navbar.classList.remove("StickyEffect");
 	}
 }
-window.onscroll=function(){BarraFixa()};
-//Essa Parte é da página ModalCampoVazio.php
+//Efeito do H1 que esta no rodapé do site
+function FadeInEffect(){
+	var H1Bottom  = document.getElementById("H1Bottom");
+	var OpacityH1 = Number(H1Bottom.style.getPropertyValue('opacity'));
+	if(OpacityH1<1){
+		OpacityH1              = OpacityH1+0.01;
+		H1Bottom.style.opacity = OpacityH1;
+	}else{
+		clearInterval(Intervalo);
+	}
+}
+function H1FadeEffect(){
+	var Intervalo = setInterval(FadeInEffect,60);
+}
+window.onscroll = function(){BarraFixa()};

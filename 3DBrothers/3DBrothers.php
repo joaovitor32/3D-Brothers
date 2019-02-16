@@ -15,7 +15,32 @@
 </head>
 	<?php
 		include ('ConexaoFotos.php');
-	?>
+	?>   
+	<script type="text/javascript">
+		/*Mascara do telefone*/
+		function mascara(o,f){
+			v_obj=o
+			v_fun=f
+			setTimeout("execmascara()",1)
+		}
+		function execmascara(){
+			v_obj.value=v_fun(v_obj.value)
+		}
+		function mtel(v){
+			v=v.replace(/\D/g,"");
+			v=v.replace(/^(\d{2})(\d)/g,"($1) $2");
+			v=v.replace(/(\d)(\d{4})$/,"$1-$2");
+			return v;
+		}
+		function id( el ){
+			return document.getElementById( el );
+		}
+		window.onload = function(){
+			id('telefone').onkeypress = function(){
+				mascara( this, mtel );
+			}
+		}
+	</script>
 		<section id="Topico1" class="SecaoSite">
 			<div class="SecEsp QTDSite" data-section="Home">
 				<div class="DiviSubtopicos">Home</div>
@@ -123,7 +148,7 @@
 								<label class="ContatoLabel">Email:</label><br>
 								<input class="InputContato" type="text" name="Email" placeholder="Digite aqui seu email:"><br>
 								<label class="ContatoLabel">Telefone:</label><br>
-								<input class="InputContato" type="number" name="Telefone" placeholder="Telefone:"><br>
+								<input class="InputContato" id="telefone" maxlength="15" type="text" name="Telefone" placeholder="Telefone:"><br>
 								<label class="ContatoLabel">Mensagem:</label><br>
 								<textarea class="TextareaContato"  name="Mensagem"></textarea><br>
 								<button class="btn BotaoContato">Enviar</button>
@@ -133,7 +158,7 @@
 				</div>
 			</div>
 		</section>
-		<section onmouseover="H1FadeEffect()">
+		<section onmouseover="H1Effects()">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 offset-2">					

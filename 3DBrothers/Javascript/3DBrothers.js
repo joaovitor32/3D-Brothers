@@ -52,11 +52,9 @@ function FadeInEffect(){
 	if(OpacityH1<1){
 		OpacityH1              = OpacityH1+0.01;
 		H1Bottom.style.opacity = OpacityH1;
-	}else{
-		clearInterval(Intervalo);
 	}
 }
-function H1FadeEffect(){
-	var Intervalo = setInterval(FadeInEffect,60);
+function H1Effects(){
+	setInterval(FadeInEffect,40);
 }
 window.onscroll = function(){BarraFixa()};

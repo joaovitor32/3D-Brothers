@@ -5,7 +5,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 offset-3">
-					<form method="POST"  action="UploadDeFotos.php" enctype="multipart/form-data">
+					<form method="POST"  action="Sistema/Fotos/UploadDeFotos.php" enctype="multipart/form-data">
 						Imagem: <input name="Imagem1" type="file" >
 						<input type="submit" value="Cadastrar">
 					</form>
@@ -32,7 +32,7 @@
 									while($Row= mysqli_fetch_object($ConsultaFoto)){
 										echo '<tr>';
 										echo '<td>'.$Row->CodFoto.'</td>';
-										echo "<td><img class='PadraoImagem' src='PegaImagem.php?Id=$Row->CodFoto'></td>"; 
+										echo "<td><img class='PadraoImagem' src='Sistema/Fotos/PegaImagem.php?Id=$Row->CodFoto'></td>"; 
 										echo "<td><button><a href='/3D-Brothers/3DBrothers/Php/Sistema/Fotos/DeletarFoto.php?Id=".$Row->CodFoto."'>Deletar Foto</button></td>";
 										echo '</tr>';
 									}

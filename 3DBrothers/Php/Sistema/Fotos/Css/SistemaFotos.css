@@ -6,6 +6,7 @@
     margin-top:2%;
 }
 .inputBotao{
+    
     border-radius:10px;
     background-color:rgb(26,28,43);
     border:1px solid rgb(26,28,43);
@@ -21,7 +22,17 @@
     border:1px solid rgb(26,28,43);
 }
 
-.formWrapper {
-    border: 3px solid #C2B2B3;
-    display: inline-block;
+input[type=file]::-webkit-file-upload-button {
+  visibility: hidden;
 }
+
+input[type=file]{
+    border:3px solid rgb(26,28,43);
+    border-radius:10px;
+    height: 35px;
+    font-size:15px;
+    margin-left:5px;
+
+}
+
+

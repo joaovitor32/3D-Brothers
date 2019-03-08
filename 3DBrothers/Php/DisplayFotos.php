@@ -6,7 +6,7 @@
 			<div class="row">
 				<div class="col-md-12 offset-3">
 					<form method="POST"  action="Sistema/Fotos/UploadDeFotos.php" enctype="multipart/form-data">
-						Imagem: <input class="inputBotao" name="Imagem1" type="file" >
+						Imagem:<input name="Imagem1" type="file" >
 						<input class="inputBotao" type="submit" value="Cadastrar">
 					</form>
 				</div>
@@ -43,8 +43,6 @@
 				</div>
 			</div>
 		</div>	
-		<form action="" method="post" enctype="multipart/form-data">
-</form>
 		<script src="lib/jquery/jquery.min.js"></script>
 		<script src="Javascript/3DBrothers.js"></script>
 	</body>

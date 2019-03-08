@@ -1,6 +1,5 @@
 <?php
     include ('ConexaoFotos.php');
-
     $Imagem=$_FILES['Imagem1'];
     if($Imagem!=NULL){
         $NomeFinal= time().'.jpg';
@@ -12,7 +11,7 @@
             $SQLInsercaoImagem="INSERT INTO Fotos (Imagem) VALUES ('$MysqlImagem')" or die("Não foi feito o upload");
             mysqli_query($BD->ConectarBanco(),$SQLInsercaoImagem) or die(mysqli_error($BD->ConectarBanco()));
             unlink($NomeFinal);
-            header("location:DisplayFotos.php");
+            header("location:/3D-Brothers/3DBrothers/Php/DisplayFotos.php"); 
         }else{
             echo "Deu errado";
         }

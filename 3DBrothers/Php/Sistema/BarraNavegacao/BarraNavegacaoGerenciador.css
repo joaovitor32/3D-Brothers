@@ -4,18 +4,20 @@
 .tagA:link{
     text-decoration:none;
 }
-.NavigationBar{
+.navigationBar{
     background-color:rgb(26,28,43);
 }
 .aLink{
     float:left;
     margin-top:8px;
     color:white;
+    outline: none;
 }
 .nLink:hover{
     background-color:rgba(85,153,254,0.4);
 }
 .aLink:visited{
+    outline: none;
     color:white;
     font-size:16px;
     margin-top:0px;

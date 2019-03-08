@@ -32,8 +32,8 @@
                                     <a class="nav-link aLink" href="#">Site</a>
                                 </li>
                                 <li class="nav-item nLabel" onmouseleave="tiraMenu();">
-                                    <label  onmouseover="ativaBar();" id="title" class="EstiloLabelBarra" href="#">Login</label>
-                                    <div class="reveal" style='z-index:10;' onmouseleave="tiraMenu();" id="ALink">
+                                    <label  onmouseover="ativaBar();" id="title" class="EstiloLabelBarra">Login</label>
+                                    <div id="ALink" class="reveal" style='z-index:10;' onmouseleave="tiraMenu();">
                                         <button id="Botao1" class="BotaoBox">Cadastrar</button>
                                         <button id="Botao2" class="BotaoBox">Sair</button>
                                     </div>

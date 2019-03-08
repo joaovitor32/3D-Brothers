@@ -32,7 +32,7 @@
                                 <li class="nav-item nLink">
                                     <a class="nav-link aLink" href="#">Site</a>
                                 </li>
-                                <li class="nav-item nLabel" onmouseleave="tiraMenu();">
+                                <li class="nav-item nLabel">
                                     <label  onmouseover="ativaBar();" id="title" class="EstiloLabelBarra">Login</label>
                                     <div id="ALink" class="reveal" style='z-index:10;' onmouseleave="tiraMenu();">
                                         <button id="Botao1" class="BotaoBox">Cadastrar</button>

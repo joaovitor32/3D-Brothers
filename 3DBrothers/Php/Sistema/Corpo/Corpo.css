@@ -1,0 +1,16 @@
+.imagemCorpo{
+    margin-top:70px;
+    margin-left:120px;
+    width:450px;
+    height: 300px;
+}
+.labelCorpo{
+    margin-top:50px;
+    margin-left:6%;
+    font-size:35px;
+    color:rgb(26,28,43);
+    font-family:"Times New Roman", Times, serif;
+}
+body{
+    background-color:rgba(85,153,254,0.25);
+}

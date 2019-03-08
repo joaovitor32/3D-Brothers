@@ -4,16 +4,13 @@
 .tagA:link{
     text-decoration:none;
 }
-/*Da linha 2 a 24 efeito hover no meu*/
 .NavigationBar{
     background-color:rgb(26,28,43);
 }
-
-/*Links da Barra de navegação*/
 .aLink{
-    display:inline;
     float:left;
     margin-top:8px;
+    color:white;
 }
 .nLink:hover{
     background-color:rgba(85,153,254,0.4);
@@ -35,7 +32,6 @@
 }
 .nLabel{
     display:inline;
-    float:left;
 }
 .nLabel:hover{
     background-color:rgba(85,153,254,0.4);
@@ -46,7 +42,6 @@
     margin-top:15px;
     padding: 0px 6px;
 }
-/*------Botões dentro da caixa--------*/
 .BotaoBox{
     width:90px;
     height: 30px;

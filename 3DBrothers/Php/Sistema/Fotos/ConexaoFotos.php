@@ -4,7 +4,7 @@
         private $host = "localhost";
         private $username = "root";
         private $password = "";
-        private $dbname = "Mensagem5";
+        private $dbname = "Mensagem6";
     
         public function ConectarBanco(){
             $Conexao=mysqli_connect($this->host,$this->username,$this->password,$this->dbname);

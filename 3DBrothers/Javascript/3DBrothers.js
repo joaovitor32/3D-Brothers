@@ -100,10 +100,12 @@ function EfeitosScroll(){
 	BarraFixa();
 	Rolamento();
 }
-window.onload = InitPage;
+
 function InitPage() {
 	document.getElementById("H1Bottom").onmouseover = function () { H1Effects() };
 	EfeitoTexto();
 	window.onscroll=function(){EfeitosScroll()};
 }
+document.addEventListener('DOMContentLoaded',InitPage);
+//window.onload = function(){InitPage()};
 

@@ -61,7 +61,7 @@ function Rolamento(){
 	var secSite=document.getElementsByClassName('SecaoSite');
 	var lensecSite=secSite.length-1;
 	for( i=0;i<lensecSite;i++){
-		alturas[i]=secSite[].offsetTop;
+		alturas[i]=secSite[i].offsetTop;
 	}
 
 	window.onscroll=function(){

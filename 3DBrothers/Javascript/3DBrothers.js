@@ -23,7 +23,8 @@ function H1Effects() {
 }
 function Rolamento(){
 	
-	/*$(document).ready(function () {
+	/*Jquery usado antes de voltar a ser nativo em javascript 
+		$(document).ready(function () {
 				$("#SearchNav").on("focus", function () {
 			$(this).addClass("AtivoTagInput");
 			}).on("blur", function () {
@@ -59,30 +60,21 @@ function Rolamento(){
 	var alturas = new Array();
 	var i;
 	var secSite=document.getElementsByClassName('SecaoSite');
-<<<<<<< HEAD
 	var lensecSite=secSite.length;
 	for(i=0;i<lensecSite;i++){
 		alturas[i]=Math.floor(secSite[i].offsetTop);
-=======
-	var lensecSite=secSite.length-1;
-	for( i=0;i<lensecSite;i++){
-		alturas[i]=secSite[i].offsetTop;
->>>>>>> 64b98920a2f684313c1331d9fd55f2505547d619
 	}
 	//Tá dando errado daqui para baixo
-	window.onscroll=function(){
-		BarraFixa();
-		for(var j=1;j<=alturas.length;j++){
-			if(window.scrollY>=alturas[j]){
-				if(j-1>0){
-					document.getElementById("Topo"+(j-1)).classList.remove("EfeitoScroll");
-				}
-				if(j+1<alturas.length){
-					document.getElementById("Topo"+(j+1)).classList.remove("EfeitoScroll")
-				}
-				document.getElementById("Topo"+j).classList.add("EfeitoScroll");
-			}   
-		}
+	for(var j=1;j<=alturas.length;j++){
+		if(window.scrollY>=alturas[j]){
+			if(j-1>0){
+				document.getElementById("Topo"+(j-1)).classList.remove("EfeitoScroll");
+			}
+			if(j+1<alturas.length){
+				document.getElementById("Topo"+(j+1)).classList.remove("EfeitoScroll")
+			}
+			document.getElementById("Topo"+j).classList.add("EfeitoScroll");
+		}   
 	}
 }
 function EfeitoTexto(){
@@ -102,11 +94,14 @@ function EfeitoTexto(){
 		PT3.classList.remove("Inic1");
 	}
 }
+function EfeitosScroll(){
+	BarraFixa();
+	Rolamento();
+}
 window.onload = InitPage;
 function InitPage() {
-	//window.onscroll=function(){BarraFixa()};
 	document.getElementById("H1Bottom").onmouseover = function () { H1Effects() };
 	EfeitoTexto();
-	Rolamento();
+	window.onscroll=function(){EfeitosScroll()};
 }
 

@@ -59,9 +59,15 @@ function Rolamento(){
 	var alturas = new Array();
 	var i;
 	var secSite=document.getElementsByClassName('SecaoSite');
+<<<<<<< HEAD
 	var lensecSite=secSite.length;
 	for(i=0;i<lensecSite;i++){
 		alturas[i]=Math.floor(secSite[i].offsetTop);
+=======
+	var lensecSite=secSite.length-1;
+	for( i=0;i<lensecSite;i++){
+		alturas[i]=secSite[i].offsetTop;
+>>>>>>> 64b98920a2f684313c1331d9fd55f2505547d619
 	}
 	//Tá dando errado daqui para baixo
 	window.onscroll=function(){

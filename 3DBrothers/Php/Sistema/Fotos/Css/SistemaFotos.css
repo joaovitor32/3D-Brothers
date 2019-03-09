@@ -6,33 +6,28 @@
     margin-top:2%;
 }
 .inputBotao{
-    
-    border-radius:10px;
+    position: absolute;
+    margin-right: 100px;
+    height:35px;
     background-color:rgb(26,28,43);
     border:1px solid rgb(26,28,43);
     color:white;
 }
-.inputBotao:hover{
-    transition:1s;
-    -moz-transition:1s;
-    -o-transition:1s;
-    -webkit-transition:1s;
-    background-color:rgba(255,255,255,0.6);
-    color:rgb(26,28,43);
-    border:1px solid rgb(26,28,43);
-}
-
 input[type=file]::-webkit-file-upload-button {
   visibility: hidden;
 }
 
 input[type=file]{
     border:3px solid rgb(26,28,43);
-    border-radius:10px;
     height: 35px;
     font-size:15px;
     margin-left:5px;
-
+    outline:none;
+    cursor:pointer;
+    color:rgb(26,28,43);
+}
+.deletaImagem{
+   
 }
 
 

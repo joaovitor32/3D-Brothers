@@ -22,46 +22,81 @@ function H1Effects() {
 	setInterval(FadeInEffect, 40);
 }
 function Rolamento(){
-	$(document).ready(function () {
-	//Header
-	$("#SearchNav").on("focus", function () {
-		$(this).addClass("AtivoTagInput");
-	}).on("blur", function () {
-		$(this).removeClass("AtivoTagInput");
-	});
-	// Efeito Quem Somos
-		$(window).scroll(function () {
+	
+	/*$(document).ready(function () {
+				$("#SearchNav").on("focus", function () {
+			$(this).addClass("AtivoTagInput");
+			}).on("blur", function () {
+			$(this).removeClass("AtivoTagInput");
+			});
+		
+			var alturas = {};
+			var i = 0;
+			$(".SecaoSite").each(function () {
+				alturas[i] = $(this).offset().top;
+				i++;
+			});
+			var TotalSecoes = i;
+			var Seccao;
+			$(window).on('scroll', function () {
+				for (i = 1; i <= TotalSecoes; i++) {
+					if ($(window).scrollTop() >= alturas[i]) {
+						$('#Topo' + (i - 1)).removeClass('EfeitoScroll');
+						$('#Topo' + (i + 1)).removeClass('EfeitoScroll');
+						$('#Topo' + i).addClass('EfeitoScroll');
+					}
+				}
+			});
+		});
+	}*/
+	var searchNav=document.getElementById("SearchNav");
+
+
+	searchNav.addEventListener('focus',searchNav.classList.add('AtivoTagInput'),true);
+	searchNav.addEventListener('focus',searchNav.classList.remove('AtivoTagInput',false));
+
+
+	var alturas = new Array();
+	var i;
+	var secSite=document.getElementsByClassName('SecaoSite');
+	var lensecSite=secSite.length-1;
+	for( i=0;i<lensecSite;i++){
+		alturas[i]=secSite[].offsetTop;
+	}
+
+	window.onscroll=function(){
+		BarraFixa();
+		for(var j=0;j<alturas.length;j++){
+			if(window.scrollTop>alturas[j]){
+				document.getElementById('Topo'+(j-1)).classList.remove('EfeitosScroll');
+				document.getElementById('Topo'+(j+1)).classList.remove('EfeitosScroll');
+				document.getElementById('Topo'+(j)).classList.add('EfeitosScroll');
+			}   
+		}
+	}
+}
+function EfeitoTexto(){
+	/*$(window).scroll(function () {
 			if ($(this).scrollTop() > 85) {
 				$("#PT1").removeClass("Inic1");
 				$("#PT2").removeClass("Inic2");
 				$("#PT3").removeClass("Inic1");
-			}
-		});
-		//Efeito variação do scroll
-		//Armazena as secções que vao mudar e var Topos vai acumular Topo1 Topo2 e Topo3
-		var alturas = {};
-		var i = 1;
-		$(".SecaoSite").each(function () {
-			alturas[i] = $(this).offset().top;
-			i++;
-		});
-		var TotalSecoes = i;
-		var Seccao;
-		$(window).on('scroll', function () {
-			for (i = 1; i <= TotalSecoes; i++) {
-				if ($(window).scrollTop() >= alturas[i]) {
-					$('#Topo' + (i - 1)).removeClass('EfeitoScroll');
-					$('#Topo' + (i + 1)).removeClass('EfeitoScroll');
-					$('#Topo' + i).addClass('EfeitoScroll');
-				}
-			}
-		});
-	});
+		}
+	});*/
+	var PT1=document.getElementById("PT1");
+	var PT2=document.getElementById("PT2");
+	var PT3=document.getElementById("PT3");
+	if(window.scrollY>85){
+		PT1.classList.remove("Inic1");
+		PT2.classList.remove("Inic2");
+		PT3.classList.remove("Inic1");
+	}
 }
-window.onscroll=function(){BarraFixa()};
 window.onload = InitPage;
 function InitPage() {
+	//window.onscroll=function(){BarraFixa()};
 	document.getElementById("H1Bottom").onmouseover = function () { H1Effects() };
+	EfeitoTexto();
 	Rolamento();
 }
 

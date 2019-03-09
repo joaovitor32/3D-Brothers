@@ -6,7 +6,8 @@
 			<div class="row">
 				<div class="col-md-12 offset-3">
 					<form method="POST"  action="Sistema/Fotos/UploadDeFotos.php" enctype="multipart/form-data">
-						Imagem:<input name="Imagem1" type="file" >
+						<label>Imagem:</label>
+						<input name="Imagem1" type="file" >
 						<input class="inputBotao" type="submit" value="Cadastrar">
 					</form>
 				</div>
@@ -33,7 +34,7 @@
 										echo '<tr>';
 										echo '<td>'.$Row->CodFoto.'</td>';
 										echo "<td><img class='PadraoImagem' src='Sistema/Fotos/PegaImagem.php?Id=$Row->CodFoto'></td>"; 
-										echo "<td><button><a href='/3D-Brothers/3DBrothers/Php/Sistema/Fotos/DeletarFoto.php?Id=".$Row->CodFoto."'>Deletar Foto</button></td>";
+										echo "<td><button><a class='deletaImagem' href='/3D-Brothers/3DBrothers/Php/Sistema/Fotos/DeletarFoto.php?Id=".$Row->CodFoto."'>Deletar Foto</button></td>";
 										echo '</tr>';
 									}
 								?>

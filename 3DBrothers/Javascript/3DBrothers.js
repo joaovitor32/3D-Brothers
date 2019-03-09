@@ -1,8 +1,10 @@
 //1° Efeito de Barra
 function BarraFixa() {
+	
+	var tamMenu=document.getElementById("Header1").offsetHeight;
 	var Navbar = document.getElementById("BarraDeNavegacao");
 	var PosBarra = Navbar.offsetTop;
-	if (window.scrollY > PosBarra) {
+	if (window.scrollY > PosBarra-tamMenu){
 		Navbar.classList.add("StickyEffect");
 	} else {
 		Navbar.classList.remove("StickyEffect");
@@ -50,8 +52,8 @@ function Rolamento(){
 			});
 		});
 	}*/
-	var searchNav=document.getElementById("SearchNav");
 
+	var searchNav=document.getElementById('SearchNav');
 
 	searchNav.addEventListener('focus',searchNav.classList.add('AtivoTagInput'),true);
 	searchNav.addEventListener('focus',searchNav.classList.remove('AtivoTagInput',false));

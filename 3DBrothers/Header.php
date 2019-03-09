@@ -13,7 +13,7 @@
 	<title></title>
 </head>
 	<body class="CorBody" id="Fundo">
-		<header class="SecaoSite QTDSecao" >
+		<header class="SecaoSite" id="Header1" >
 			<div class="EstiloTopoNav" id="BarraDeNavegacao">
 				<div class="container">
 					<div class="row">
@@ -39,7 +39,7 @@
 				</div>
 			</div>
 		</header>
-	<script src="lib/jquery/jquery.min.js"></script>
-    <script src="Javascript/3DBrothers.js"></script>
+			<script src="lib/jquery/jquery.min.js"></script>
+    	<script src="Javascript/3DBrothers.js"></script>
   </body>
 </html>

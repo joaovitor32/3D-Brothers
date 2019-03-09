@@ -59,18 +59,22 @@ function Rolamento(){
 	var alturas = new Array();
 	var i;
 	var secSite=document.getElementsByClassName('SecaoSite');
-	var lensecSite=secSite.length-1;
-	for( i=0;i<lensecSite;i++){
-		alturas[i]=secSite[].offsetTop;
+	var lensecSite=secSite.length;
+	for(i=0;i<lensecSite;i++){
+		alturas[i]=Math.floor(secSite[i].offsetTop);
 	}
-
+	//Tá dando errado daqui para baixo
 	window.onscroll=function(){
 		BarraFixa();
-		for(var j=0;j<alturas.length;j++){
-			if(window.scrollTop>alturas[j]){
-				document.getElementById('Topo'+(j-1)).classList.remove('EfeitosScroll');
-				document.getElementById('Topo'+(j+1)).classList.remove('EfeitosScroll');
-				document.getElementById('Topo'+(j)).classList.add('EfeitosScroll');
+		for(var j=1;j<=alturas.length;j++){
+			if(window.scrollY>=alturas[j]){
+				if(j-1>0){
+					document.getElementById("Topo"+(j-1)).classList.remove("EfeitoScroll");
+				}
+				if(j+1<alturas.length){
+					document.getElementById("Topo"+(j+1)).classList.remove("EfeitoScroll")
+				}
+				document.getElementById("Topo"+j).classList.add("EfeitoScroll");
 			}   
 		}
 	}

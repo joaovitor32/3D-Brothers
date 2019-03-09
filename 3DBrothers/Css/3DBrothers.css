@@ -116,9 +116,11 @@ p{
 /*---------Quem Somos----------*/
 .Inic1{
 	margin-left: -3000px;
+	visibility: hidden;
 }
 .Inic2{
 	margin-right: -3000px;
+	visibility: hidden;
 }
 .TopGeral{
 	justify-content: center;

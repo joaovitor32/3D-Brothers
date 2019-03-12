@@ -52,23 +52,20 @@ function Rolamento(){
 			});
 		});
 	}*/
-
 	var searchNav=document.getElementById('SearchNav');
 
 	searchNav.addEventListener('focus',searchNav.classList.add('AtivoTagInput'),true);
-	searchNav.addEventListener('focus',searchNav.classList.remove('AtivoTagInput',false));
+	searchNav.addEventListener('blur',searchNav.classList.remove('AtivoTagInput',false));
 
-
-	var alturas = new Array();
 	var i;
+	var alturas = new Array();
 	var secSite=document.getElementsByClassName('SecaoSite');
 	var lensecSite=secSite.length;
 	for(i=0;i<lensecSite;i++){
-		alturas[i]=Math.floor(secSite[i].offsetTop);
+		alturas[i]=secSite[i].offsetTop;
 	}
-	//Tá dando errado daqui para baixo
 	for(var j=1;j<=alturas.length;j++){
-		if(window.scrollY>=alturas[j]){
+		if(window.scrollY>=(alturas[j])){
 			if(j-1>0){
 				document.getElementById("Topo"+(j-1)).classList.remove("EfeitoScroll");
 			}
@@ -87,10 +84,11 @@ function EfeitoTexto(){
 				$("#PT3").removeClass("Inic1");
 		}
 	});*/
+	var sec2Scroll=document.getElementsByClassName('SecaoSite')[1].offsetTop;
 	var PT1=document.getElementById("PT1");
 	var PT2=document.getElementById("PT2");
 	var PT3=document.getElementById("PT3");
-	if(window.scrollY>85){
+	if(window.scrollY>sec2Scroll){
 		PT1.classList.remove("Inic1");
 		PT2.classList.remove("Inic2");
 		PT3.classList.remove("Inic1");
@@ -99,13 +97,12 @@ function EfeitoTexto(){
 function EfeitosScroll(){
 	BarraFixa();
 	Rolamento();
+	EfeitoTexto();
 }
 
 function InitPage() {
 	document.getElementById("H1Bottom").onmouseover = function () { H1Effects() };
-	EfeitoTexto();
 	window.onscroll=function(){EfeitosScroll()};
 }
 document.addEventListener('DOMContentLoaded',InitPage);
-//window.onload = function(){InitPage()};
 

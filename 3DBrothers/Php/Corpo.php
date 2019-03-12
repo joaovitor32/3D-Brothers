@@ -1,3 +1,6 @@
+    <?php
+        session_start();
+    ?>
     <section>
         <div class="container">
             <div class="row">

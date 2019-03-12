@@ -36,7 +36,7 @@
                                     <label  onmouseover="ativaBar();" id="title" class="EstiloLabelBarra">Login</label>
                                     <div id="ALink" class="reveal" style='z-index:10;' onmouseleave="tiraMenu();">
                                         <button id="Botao1" class="BotaoBox">Cadastrar</button>
-                                        <button id="Botao2" class="BotaoBox">Sair</button>
+                                        <a id="Botao2" href="sair.php">Sair</a>
                                     </div>
                                 </li>
                             </ul>
